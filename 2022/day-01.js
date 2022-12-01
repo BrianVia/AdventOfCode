@@ -2250,7 +2250,6 @@ function splitArray(numArray) {
       tempArray = [];
     }
   }
-  console.log(arrayOfArrays.length);
   return arrayOfArrays;
 }
 
@@ -2266,4 +2265,10 @@ function calculateArrayTotal(nums) {
 const arr = input;
 let splitArrays = splitArray(arr);
 const totals = splitArrays.map((arr) => calculateArrayTotal(arr));
-console.log(Math.max(...totals));
+console.log("Day 1, Part 1 Answer:", Math.max(...totals));
+
+const sortedCalories = totals.sort((a, b) => b - a);
+console.log(
+  "Day 1, Part 2 Answer:",
+  sortedCalories[0] + sortedCalories[1] + sortedCalories[2]
+);
